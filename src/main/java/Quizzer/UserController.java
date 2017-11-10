@@ -47,6 +47,6 @@ public class UserController {
    }
 
    public void updateView(){				
-      view.printInformation(model.get_username(), model.get_role(), model.get_score());
+      view.print_userInformation(model.get_username(), model.get_role(), model.get_score());
    }
 }

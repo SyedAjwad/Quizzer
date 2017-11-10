@@ -11,7 +11,7 @@ package Quizzer;
  * @author AJ
  */
 public class UserView {
-    public void printInformation(String username, String role, int score)
+    public void print_userInformation(String username, String role, int score)
     {
         System.out.println("UserName:" + username);
         System.out.println("Role: " + role);
