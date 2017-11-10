@@ -14,11 +14,11 @@ public class UserController {
     private User model;
     private UserView view;
 
-   public void StudentController(User model, UserView view){
+   public UserController(User model, UserView view){
        this.model = model;
        this.view = view;
    }
-   public void setStudentName(String name){
+   public void setuserName(String name){
       model.setusername(name);		
    }
 
