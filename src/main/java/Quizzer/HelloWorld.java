@@ -14,7 +14,6 @@ public class HelloWorld {
     
     public static void main(String[] args) {
         User greeter = new User();
-        greeter.setscore(2);
         
     }
 }
