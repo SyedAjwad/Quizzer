@@ -22,7 +22,7 @@ public class UserController {
       model.setusername(name);		
    }
 
-   public String getStudentName(){
+   public String getusername(){
       return model.getusername();		
    }
 

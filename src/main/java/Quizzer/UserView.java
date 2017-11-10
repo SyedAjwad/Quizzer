@@ -13,8 +13,8 @@ package Quizzer;
 public class UserView {
     public void printInformation(String username, String role, int score)
     {
-        System.out.print("UserName:" + username);
-        System.out.print("Role: " + role);
-        System.out.print("Has score: " + score);
+        System.out.println("UserName:" + username);
+        System.out.println("Role: " + role);
+        System.out.println("Has score: " + score);
     }
 }

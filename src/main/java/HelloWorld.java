@@ -1,4 +1,4 @@
-package Quizzer;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,11 +13,14 @@ package Quizzer;
 public class HelloWorld {
     
     public static void main(String[] args) {
-        User greeter = new User();
-        UserView viewer = new UserView();
-        UserController controller = new UserController(greeter, viewer);
+        Quizzer.User greeter = new Quizzer.User();
+        Quizzer.UserView viewer = new Quizzer.UserView();
+        Quizzer.UserController controller = new Quizzer.UserController(greeter, viewer);
         controller.updateView();
-        controller.setuserName("Ajwad");
+        greeter.setusername("Ajwad");
+        controller.setpassword("password");
+        controller.setrole("Student");
+        controller.setscore(0);
         controller.updateView();
     }
 }
