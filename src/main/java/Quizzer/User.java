@@ -15,35 +15,35 @@ public class User {
     private String password;
     private String role;
     private int score;
-    public void setusername(String username)
+    public void set_username(String username)
     {
         this.username = username;
     }
-    public void setpassword(String password)
+    public void set_password(String password)
     {
         this.password = password;
     }
-    public void setrole(String role)
+    public void set_role(String role)
     {
         this.role = role;
     }
-    public void setscore(int score)
+    public void set_score(int score)
     {
         this.score = score;
     }
-    public String getusername()
+    public String get_username()
     {
         return username;
     }
-    public String getpassword()
+    public String get_password()
     {
         return password;
     }
-    public String getrole()
+    public String get_role()
     {
         return role;
     }
-    public int getscore()
+    public int get_score()
     {
         return score;
     }

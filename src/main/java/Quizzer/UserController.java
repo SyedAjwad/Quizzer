@@ -18,35 +18,35 @@ public class UserController {
        this.model = model;
        this.view = view;
    }
-   public void setuserName(String name){
-      model.setusername(name);		
+   public void set_userName(String name){
+      model.set_username(name);		
    }
 
-   public String getusername(){
-      return model.getusername();		
+   public String get_username(){
+      return model.get_username();		
    }
 
-   public void setpassword(String password){
-      model.setpassword(password);		
+   public void set_password(String password){
+      model.set_password(password);		
    }
 
-   public void setrole(String role){
-      model.setrole(role);	
+   public void set_role(String role){
+      model.set_role(role);	
    }
    
-   public String getrole(){
-      return model.getrole();		
+   public String get_role(){
+      return model.get_role();		
    }
    
-   public void setscore(int score){
-      model.setscore(score);	
+   public void set_score(int score){
+      model.set_score(score);	
    }
    
-   public int getscore(){
-      return model.getscore();		
+   public int get_score(){
+      return model.get_score();		
    }
 
    public void updateView(){				
-      view.printInformation(model.getusername(), model.getrole(), model.getscore());
+      view.printInformation(model.get_username(), model.get_role(), model.get_score());
    }
 }

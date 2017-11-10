@@ -17,10 +17,10 @@ public class HelloWorld {
         Quizzer.UserView viewer = new Quizzer.UserView();
         Quizzer.UserController controller = new Quizzer.UserController(greeter, viewer);
         controller.updateView();
-        greeter.setusername("Ajwad");
-        controller.setpassword("password");
-        controller.setrole("Student");
-        controller.setscore(0);
+        greeter.set_username("Ajwad");
+        controller.set_password("password");
+        controller.set_role("Student");
+        controller.set_score(0);
         controller.updateView();
     }
 }
