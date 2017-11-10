@@ -11,7 +11,8 @@
 public class HelloWorld {
     
     public static void main(String[] args) {
-        Greeter greeter = new Greeter();
-        System.out.println(greeter.sayHello());
+        User greeter = new User();
+        greeter.setscore(2);
+        System.out.println(greeter.getscore());
     }
 }
