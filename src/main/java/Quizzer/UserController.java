@@ -45,6 +45,10 @@ public class UserController {
    public int get_score(){
       return model.get_score();		
    }
+   
+   public boolean add_user(){
+       return model.add_user();
+   }
 
    public void updateView(){				
       view.print_userInformation(model.get_username(), model.get_role(), model.get_score());

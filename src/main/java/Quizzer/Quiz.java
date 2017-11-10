@@ -31,7 +31,7 @@ public class Quiz {
     {
         this.questions = questions;
     }
-    public String set_title()
+    public String get_title()
     {
         return title;
     }
@@ -46,5 +46,9 @@ public class Quiz {
     public Question[] get_questions()
     {
         return questions;
+    }
+    public boolean add_quiz()
+    {
+        return true;
     }
 }

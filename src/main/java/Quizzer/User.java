@@ -47,4 +47,8 @@ public class User {
     {
         return score;
     }
+    public boolean add_user()
+    {
+        return true;
+    }
 }

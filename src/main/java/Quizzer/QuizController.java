@@ -49,6 +49,10 @@ public class QuizController {
     {
         return model.get_questions();
     }
+    public boolean add_quiz()
+    {
+        return model.add_quiz();
+    }
     public void updateView(){				
       view.print_quizInformation(model.get_title(), model.get_description(), model.get_num_question());
    }

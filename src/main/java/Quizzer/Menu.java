@@ -22,7 +22,8 @@ public class Menu {
     {
         String name = "";
         String password = "";
-        int role = 0;
+        String role = "";
+        int choice = 0;
         User u1 = new User();
         UserView uv1 = new UserView();
         UserController uc1 = new UserController(u1, uv1);
@@ -36,15 +37,18 @@ public class Menu {
         System.out.print("Please Select Correct Role: "
                 + "1. Instructor"
                 + "2. Student");
-        if(role == 1)
+        if(choice == 1)
         {
-            
+            role = "Instructor";
         }
-        else if(role == 2)
+        else if(choice == 2)
         {
-            
+            role = "Student";
         }
-        } while((role !=1) || (role!=2));
-        System.out.print("Congratulations. You Have successfully signed up");
+        } while((choice != 1) || (choice != 2));
+        if (uc1.add_user())
+        {
+                System.out.print("Congratulations. You Have successfully signed up");
+        }
     }
 }
