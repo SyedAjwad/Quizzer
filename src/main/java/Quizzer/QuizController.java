@@ -49,9 +49,9 @@ public class QuizController {
     {
         return model.get_questions();
     }
-    public boolean add_quiz()
+    public boolean add_quiz(String title, String description, int num_question)
     {
-        return model.add_quiz();
+        return model.add_quiz(title, description, num_question);
     }
     public void updateView(){				
       view.print_quizInformation(model.get_title(), model.get_description(), model.get_num_question());

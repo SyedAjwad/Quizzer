@@ -42,9 +42,6 @@ public class Start_menu extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);

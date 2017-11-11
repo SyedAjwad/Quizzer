@@ -162,15 +162,21 @@ public class SignUP extends javax.swing.JFrame {
         {
             role = "Student";
         }
-        System.out.println(role);
-        if (m1.signUp(jTextField1.getText(), jTextField2.getText(), role))
+        if ((jTextField1.getText().equals("")))
         {
-            Success s = new Success(this,true);
-            s.setVisible(true);
+            JOptionPane.showMessageDialog(this, "Please Enter your User Name");
+        }
+        else if ((jTextField2.getText().equals("")))
+        {
+            JOptionPane.showMessageDialog(this, "Please Enter your Password");
+        }
+        else if (m1.signUp(jTextField1.getText(), jTextField2.getText(), role))
+        {
+            JOptionPane.showMessageDialog(this, "Successfully Signed Up");
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Could Not sign ");
+            JOptionPane.showMessageDialog(this, "Can not sign Up");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

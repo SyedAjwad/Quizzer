@@ -47,7 +47,7 @@ public class Quiz {
     {
         return questions;
     }
-    public boolean add_quiz()
+    public boolean add_quiz(String title, String description, int num_question)
     {
         return true;
     }
