@@ -18,37 +18,14 @@ public class Menu {
         System.out.print("Enter your Password: ");
         //Check from DB whether password exists
     }
-    public void SignUp()
+    public boolean signUp(String name, String password, String role)
     {
-        String name = "";
-        String password = "";
-        String role = "";
-        int choice = 0;
         User u1 = new User();
         UserView uv1 = new UserView();
         UserController uc1 = new UserController(u1, uv1);
-        System.out.print("Enter your Name: ");
-        System.out.print("Enter your Password: ");
-        System.out.print("Select Your Role: "
-                + "1. Instructor"
-                + "2. Student");
-        do
-        {
-        System.out.print("Please Select Correct Role: "
-                + "1. Instructor"
-                + "2. Student");
-        if(choice == 1)
-        {
-            role = "Instructor";
-        }
-        else if(choice == 2)
-        {
-            role = "Student";
-        }
-        } while((choice != 1) || (choice != 2));
-        if (uc1.add_user())
-        {
-                System.out.print("Congratulations. You Have successfully signed up");
-        }
+        uc1.set_userName(name);
+        uc1.set_password(password);
+        uc1.set_role(role);
+        return uc1.add_user();
     }
 }
