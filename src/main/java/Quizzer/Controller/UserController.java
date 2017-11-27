@@ -1,4 +1,7 @@
-package Quizzer;
+package Quizzer.Controller;
+
+import Quizzer.View.UserView;
+import Quizzer.Model.Users;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,17 +14,24 @@ package Quizzer;
  * @author AJ
  */
 public class UserController {
-    private User model;
+    private Users model;
     private UserView view;
 
-   public UserController(User model, UserView view){
+   public UserController(Users model, UserView view){
        this.model = model;
        this.view = view;
    }
+   public void set_user_id(int User_id)
+    {
+        this.model.set_user_id(User_id);
+    }
    public void set_userName(String name){
       model.set_username(name);		
    }
-
+   public int get_user_id()
+    {
+        return this.model.get_user_id();
+    }
    public String get_username(){
       return model.get_username();		
    }
@@ -30,27 +40,11 @@ public class UserController {
       model.set_password(password);		
    }
 
-   public void set_role(String role){
-      model.set_role(role);	
-   }
-   
-   public String get_role(){
-      return model.get_role();		
-   }
-   
-   public void set_score(int score){
-      model.set_score(score);	
-   }
-   
-   public int get_score(){
-      return model.get_score();		
-   }
-   
    public boolean add_user(){
        return model.add_user();
    }
 
    public void updateView(){				
-      view.print_userInformation(model.get_username(), model.get_role(), model.get_score());
+      view.print_userInformation(model.get_user_id(),model.get_username());
    }
 }

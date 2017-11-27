@@ -5,6 +5,10 @@
  */
 package Quizzer;
 
+import Quizzer.Model.Question;
+import Quizzer.Model.Quiz;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author AJ
@@ -14,8 +18,15 @@ public class Question_form extends javax.swing.JFrame {
     /**
      * Creates new form Question_form
      */
+    int questions_rem;
+    int quiz_id;
     public Question_form() {
         initComponents();
+    }
+    public Question_form(int questions_rem, int quiz_id) {
+        initComponents();
+        this.questions_rem = questions_rem;
+        this.quiz_id = quiz_id;
     }
 
     /**
@@ -64,7 +75,7 @@ public class Question_form extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setToolTipText("Enter Password");
+        jTextField2.setToolTipText("");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -83,6 +94,11 @@ public class Question_form extends javax.swing.JFrame {
         jRadioButton3.setText("Is Numeric");
 
         jButton1.setText("Add Question");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Maximum Score");
 
@@ -188,6 +204,41 @@ public class Question_form extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Question q1 = new Question();
+        System.out.print(quiz_id);
+        q1.set_question_id(2);
+        q1.set_position(Integer.parseInt(jTextField1.getText()));
+        q1.set_text(jTextArea1.getText());
+        q1.set_expected_option(Integer.parseInt(jTextField2.getText()));
+        q1.set_max_score(Integer.parseInt(jTextField3.getText()));
+        if(jRadioButton1.isSelected())
+        {
+            MCQ_view m1 = new MCQ_view(q1.get_question_id());
+            m1.setVisible(true);
+            q1.set_options(4);
+        }
+        if(jRadioButton2.isSelected())
+        {
+            q1.set_options(2);
+        }
+        else if(jRadioButton3.isSelected())
+        {
+            q1.set_options(1);
+        }
+        if(this.questions_rem >0)
+        {
+            Question_form qf1 = new Question_form((questions_rem-1),quiz_id);
+            qf1.setVisible(true);
+            dispose();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Questions added in Quiz Successfully");
+            dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

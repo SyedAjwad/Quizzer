@@ -13,14 +13,12 @@
 public class HelloWorld {
     
     public static void main(String[] args) {
-        Quizzer.User greeter = new Quizzer.User();
-        Quizzer.UserView viewer = new Quizzer.UserView();
-        Quizzer.UserController controller = new Quizzer.UserController(greeter, viewer);
+        Quizzer.Model.Users greeter = new Quizzer.Model.Users();
+        Quizzer.View.UserView viewer = new Quizzer.View.UserView();
+        Quizzer.Controller.UserController controller = new Quizzer.Controller.UserController(greeter, viewer);
         controller.updateView();
         greeter.set_username("Ajwad");
         controller.set_password("password");
-        controller.set_role("Student");
-        controller.set_score(0);
         controller.updateView();
     }
 }

@@ -3,26 +3,48 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Quizzer;
+package Quizzer.Model;
 
+import java.io.Serializable;
+import javax.persistence.*;
 /**
  *
  * @author AJ
  */
-public class Question {
+@Entity
+@Table(name = "Question")
+public class Question implements Serializable{
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Quiz quiz;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private int question_id;
+    private int position;
     private String text;
-    private String type;
     private int options;
     private int exp_correct_opt;
     private int max_score;
     
+    public void setQuiz(Quiz quiz)
+    {
+        this.quiz = quiz;
+    }
+    public Quiz getQuiz()
+    {
+        return quiz;
+    }
+    public void set_question_id(int question_id)
+    {
+        this.question_id = question_id;
+    }
+    public void set_position(int position)
+    {
+        this.position = position;
+    }
     public void set_text(String text)
     {
         this.text = text;
-    }
-    public void set_type(String type)
-    {
-        this.type = type;
     }
     public void set_options(int options)
     {
@@ -36,13 +58,17 @@ public class Question {
     {
         this.max_score = max_score;
     }
+    public int get_question_id()
+    {
+        return question_id;
+    }
+    public int get_position()
+    {
+        return position;
+    }
     public String get_text()
     {
         return text;
-    }
-    public String get_type()
-    {
-        return type;
     }
     public int get_options()
     {

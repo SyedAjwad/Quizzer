@@ -1,4 +1,4 @@
-package Quizzer;
+package Quizzer.View;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,10 +11,9 @@ package Quizzer;
  * @author AJ
  */
 public class UserView {
-    public void print_userInformation(String username, String role, int score)
+    public void print_userInformation(int User_id,String username)
     {
+        System.out.println("UserId:" + User_id);
         System.out.println("UserName:" + username);
-        System.out.println("Role: " + role);
-        System.out.println("Has score: " + score);
     }
 }

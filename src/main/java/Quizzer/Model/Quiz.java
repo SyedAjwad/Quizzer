@@ -3,18 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Quizzer;
+package Quizzer.Model;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.*;
 /**
  *
  * @author AJ
  */
-public class Quiz {
+@Entity
+@Table(name = "Quiz")
+public class Quiz implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private int quiz_id;
     private String title;
     private String description;
     private int num_question;
-    private Question questions[];
-    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "quiz")
+    List<Question> Ques;
+    public void set_quiz_id(int quiz_id)
+    {
+        this.quiz_id = quiz_id;
+    }
     public void set_title(String title)
     {
         this.title = title;
@@ -27,9 +39,13 @@ public class Quiz {
     {
         this.num_question = num_question;
     }
-    public void set_questions(Question questions[])
+    public void set_questions(List<Question> Ques)
     {
-        this.questions = questions;
+        this.Ques = Ques;
+    }
+    public int get_quiz_id()
+    {
+        return quiz_id;
     }
     public String get_title()
     {
@@ -43,9 +59,9 @@ public class Quiz {
     {
         return num_question;
     }
-    public Question[] get_questions()
+    public List<Question> get_questions()
     {
-        return questions;
+        return Ques;
     }
     public boolean add_quiz(String title, String description, int num_question)
     {

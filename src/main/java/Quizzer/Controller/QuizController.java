@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Quizzer;
+package Quizzer.Controller;
+
+import Quizzer.View.QuizView;
+import Quizzer.Model.Question;
+import Quizzer.Model.Quiz;
+import java.util.List;
 
 /**
  *
@@ -16,7 +21,12 @@ public class QuizController {
     public QuizController(Quiz model, QuizView view){
         this.model = model;
         this.view = view;
+        model.set_quiz_id(2);
    }
+    public void set_quiz_id(int quiz_id)
+    {
+        this.model.set_quiz_id(quiz_id);
+    }
     public void set_title(String title)
     {
         model.set_title(title);
@@ -29,9 +39,13 @@ public class QuizController {
     {
         model.set_num_question(num_question);
     }
-    public void set_questions(Question questions[])
+    public void set_questions(List<Question> Ques)
     {
-        model.set_questions(questions);
+        model.set_questions(Ques);
+    }
+    public int get_quiz_id()
+    {
+        return this.model.get_quiz_id();
     }
     public String get_title()
     {
@@ -45,7 +59,7 @@ public class QuizController {
     {
         return model.get_num_question();
     }
-    public Question[] get_questions()
+    public List<Question> get_questions()
     {
         return model.get_questions();
     }
@@ -54,6 +68,6 @@ public class QuizController {
         return model.add_quiz(title, description, num_question);
     }
     public void updateView(){				
-      view.print_quizInformation(model.get_title(), model.get_description(), model.get_num_question());
+      view.print_quizInformation(model.get_quiz_id(),model.get_title(), model.get_description(), model.get_num_question());
    }
 }

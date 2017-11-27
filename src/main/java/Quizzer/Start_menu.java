@@ -42,6 +42,9 @@ public class Start_menu extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
+        jTextField1.setToolTipText("Enter your Username");
+
+        jTextField2.setToolTipText("Enter your Password");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);

@@ -170,7 +170,7 @@ public class SignUP extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Please Enter your Password");
         }
-        else if (m1.signUp(jTextField1.getText(), jTextField2.getText(), role))
+        else if (m1.signUp(jTextField1.getText(), jTextField2.getText()))
         {
             JOptionPane.showMessageDialog(this, "Successfully Signed Up");
         }
