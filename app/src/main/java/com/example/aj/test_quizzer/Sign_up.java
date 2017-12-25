@@ -1,0 +1,48 @@
+package com.example.aj.test_quizzer;
+
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+public class Sign_up extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up); // Setting sign_up activity as the view for this java file
+    }
+
+    public void auth(View v) // If the sign up button is pressed
+    {
+        // Getting texts of all the fields
+        AutoCompleteTextView username_view = findViewById(R.id.userName);
+        EditText pass_view = findViewById(R.id.password);
+        String user_name = username_view.getText().toString();
+        String password = pass_view.getText().toString();
+        RadioButton teacher = findViewById(R.id.teacher);
+        RadioButton student = findViewById(R.id.student);
+        if(!(user_name.isEmpty()) && !(password.isEmpty())) { // Checking if the fields are empty or not
+            if (teacher.isChecked()) { // If the person signed up as Teacher
+                startActivity(new Intent(Sign_up.this, Quiz_creation.class)); // Opening Quiz Creation page for them
+                this.finish(); // Finishing the current activity
+            } else if (student.isChecked()) { // If the person signed up as student
+                startActivity(new Intent(Sign_up.this, Quiz_view.class)); // Opening Viewing quiz page for them
+                this.finish(); // Finishing the current activity
+            }
+        }
+        else { // If any of the information field is empty showing the user that he has provided incorrect information
+            Context context = getApplicationContext();
+            CharSequence text = "Incorrect Information Provided";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+    }
+}
+
